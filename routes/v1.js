@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post(    '/candidat',           CandidatController.create);                                                    // C
-router.get(     '/candidat',           passport.authenticate('jwt', {session:false}), CandidatController.get); 	      // R
+// router.get(     '/candidat',           passport.authenticate('jwt', {session:false}), CandidatController.get); 	      // R
 router.get(     '/candidat',           passport.authenticate('jwt', {session:false}), CandidatController.getAll);        // R
 router.put(     '/candidat',           passport.authenticate('jwt', {session:false}), CandidatController.update);     // U
 router.delete(  '/candidat',           passport.authenticate('jwt', {session:false}), CandidatController.remove);     // D
