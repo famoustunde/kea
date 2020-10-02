@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "45ebcbcc-d601-49d3-8a6a-c6d9549df1c4",
+		"name": "KEA TEST WEBSERVICE",
+		"description": "Développement d'une application Backend à l'aide de NodeJS exposant des webservices qui serviront à : \r\n \r\n- Créer la liste des postes à pourvoir (libellé, description, nombre d’années d’experience, diplôme, nombre de place disponibles) \r\n- Création de compte pour un candidat (Nom, prénom, télephone, email, profession) - Identification d’un candidat (téléphone, mot de passe) \r\n- Recupérer la liste des postes à pourvoir (Libelle du poste, description du poste, dates de publication, date d’expiration) \r\n- Sauvegarder une nouvelle candidature dans la base de données (Informations de l’utilisateurs, Poste choisie, cv) \r\n- Lister les candidats (Nom, prenom, téléphone , lien du cv) \r\n- Supprimer un candidat (l’id du postulant) \r\n ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Creer un poste",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Charset",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"posteid\":1,\r\n    \"libellé\":\"Test\",\r\n    \"description\":\"Test\",\r\n    \"experience\":\"Test\",\r\n    \"datePublication\":\"22/04/2020\",\r\n    \"dateExpiration\":\"22/04/2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/poste",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"poste"
+					]
+				},
+				"description": "Créer la liste des postes à pourvoir (libellé, description, nombre d’années d’experience, diplôme, nombre de place disponibles) "
+			},
+			"response": []
+		},
+		{
+			"name": "Creation de compte Candidat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"candidatid\":1,\r\n    \"nom\":\"TEST\",\r\n    \"prenom\":\"TEST\",\r\n    \"profession\":\"TEST\",\r\n    \"password\":\"PASS\",\r\n    \"email\":\"test@test.com\",\r\n    \"phone\":\"0123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/candidat",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"candidat"
+					]
+				},
+				"description": "Création de compte pour un candidat (Nom, prénom, télephone, email, profession) "
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\":\"0123456789\",\r\n    \"password\":\"PASS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/candidat/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"candidat",
+						"login"
+					]
+				},
+				"description": "Identification d’un candidat"
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperer liste Postes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/poste",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"poste"
+					]
+				},
+				"description": "Recupérer la liste des postes à pourvoir (Libelle du poste, description du poste, dates de publication, date d’expiration"
+			},
+			"response": []
+		},
+		{
+			"name": "Sauvegarder candidature",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/candidat/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"candidat",
+						""
+					]
+				},
+				"description": "Sauvegarder une nouvelle candidature dans la base de données (Informations de l’utilisateurs, Poste choisie, cv) "
+			},
+			"response": []
+		},
+		{
+			"name": "Lister les candidats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/candidat",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"candidat"
+					]
+				},
+				"description": "Lister les candidats (Nom, prenom, téléphone , lien du cv)"
+			},
+			"response": []
+		},
+		{
+			"name": "Supprimer un candidat",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"candidatId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/candidat",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"candidat"
+					]
+				},
+				"description": "Supprimer un candidat (l’id du postulant) "
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"protocolProfileBehavior": {}
+}
