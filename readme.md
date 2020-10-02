@@ -10,7 +10,7 @@ Installation
 -Créer un fichier .env. Un example est offert dans le dossier principal
 
 Structure
-La structure est standard aux applications express, et combine le modèle opérationel de sequelize et Laravel.
+La structure est standard aux applications express.
 — bin
 — config
 - - - config.js
