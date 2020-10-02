@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         nom     : DataTypes.STRING,
         prenom      : DataTypes.STRING,
         profession      : DataTypes.STRING,
+        cv      : DataTypes.STRING,
         email     : {type: DataTypes.STRING, allowNull: true, unique: true, validate: { isEmail: {msg: "Email invalid."} }},
         phone     : {type: DataTypes.STRING, allowNull: true, unique: true, validate: { isNumeric: { msg: "not a valid phone number."} }},
         password  : DataTypes.STRING,
